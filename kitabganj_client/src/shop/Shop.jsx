@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from 'flowbite-react';
-
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 function Shop() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/all-books')
+    fetch('${baseURL}/all-books')
       .then(res => res.json())
       .then(data => setBooks(data));
   }, []);

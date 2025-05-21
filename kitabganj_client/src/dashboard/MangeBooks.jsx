@@ -2,14 +2,14 @@ import { Table } from "flowbite-react";
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contects/AuthProvider";
-
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 const ManageBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/all-books?uploadedBy=${user.uid}`)
+      fetch(`${baseURL}/all-books?uploadedBy=${user.uid}`)
         .then(res => res.json())
         .then(data => setAllBooks(data));
     }
@@ -17,7 +17,7 @@ const ManageBooks = () => {
 
   //delete a book
   const handleDelete = (id) =>{
-    fetch(`http://localhost:5000/book/${id}`, {
+    fetch(`${baseURL}/book/${id}`, {
       method: "DELETE",
     }).then(res => res.json()).then(data => {
       alert("Book is deleted successfully.");

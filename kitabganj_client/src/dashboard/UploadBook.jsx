@@ -1,7 +1,7 @@
 import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../contects/AuthProvider';
-
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 const UploadBook = () => {
   const { user } = useContext(AuthContext);
   const bookCategories = [
@@ -42,7 +42,7 @@ const UploadBook = () => {
       uploadedBy: user.uid // Use the user's uid
     }
 
-    fetch(`http://localhost:5000/upload-book`, {
+    fetch(`${baseURL}/upload-book`, {
       method:"POST",
       headers: {
         "Content-Type": "application/json",
