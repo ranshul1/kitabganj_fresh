@@ -4,7 +4,6 @@ import { Sidebar } from "flowbite-react";
 import { BiBuoy } from "react-icons/bi";
 import {
   HiArrowSmLeft,
-  HiArrowSmRight,
   HiChartPie,
   HiInbox,
   HiOutlineCloudUpload,
@@ -15,6 +14,7 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "../contects/AuthProvider";
 import defaultUserImg from "../assets/profile.jpg"; // Default user image
+import { Link } from "react-router-dom"; // React Router for client-side navigation
 
 const Sb = () => {
   const { user } = useContext(AuthContext);
@@ -23,39 +23,55 @@ const Sb = () => {
     <Sidebar aria-label="Sidebar with content separator example">
       <Sidebar.Logo
         href="/"
-        img={user?.photoURL || defaultUserImg} // User photo or default photo
+        img={user?.photoURL || defaultUserImg}
         imgAlt="User profile"
         className="w-16 h-16"
       >
-        <p>{user?.displayName || "User"}</p> {/* Display user name or 'Guest' */}
+        <p>{user?.displayName || "User"}</p>
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="/admin/dashboard/upload" icon={HiOutlineCloudUpload}>
-            Upload Book
+          <Sidebar.Item icon={HiOutlineCloudUpload}>
+            <Link to="/admin/dashboard/upload" className="w-full block">
+              Upload Book
+            </Link>
           </Sidebar.Item>
-          <Sidebar.Item href="/admin/dashboard/manage" icon={HiInbox}>
-            Manage Books
+          <Sidebar.Item icon={HiInbox}>
+            <Link to="/admin/dashboard/manage" className="w-full block">
+              Manage Books
+            </Link>
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
-            Users
+          <Sidebar.Item icon={HiUser}>
+            <Link to="#" className="w-full block">
+              Users
+            </Link>
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
-            Products
+          <Sidebar.Item icon={HiShoppingBag}>
+            <Link to="#" className="w-full block">
+              Products
+            </Link>
           </Sidebar.Item>
-          <Sidebar.Item href="/logout" icon={HiArrowSmLeft}>
-            Log Out
+          <Sidebar.Item icon={HiArrowSmLeft}>
+            <Link to="/logout" className="w-full block">
+              Log Out
+            </Link>
           </Sidebar.Item>
         </Sidebar.ItemGroup>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
-            Upgrade to Pro
+          <Sidebar.Item icon={HiChartPie}>
+            <Link to="#" className="w-full block">
+              Upgrade to Pro
+            </Link>
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
-            Documentation
+          <Sidebar.Item icon={HiViewBoards}>
+            <Link to="#" className="w-full block">
+              Documentation
+            </Link>
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={BiBuoy}>
-            Help
+          <Sidebar.Item icon={BiBuoy}>
+            <Link to="#" className="w-full block">
+              Help
+            </Link>
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>
