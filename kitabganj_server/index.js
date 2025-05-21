@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path'); // ✅ required for serving build files
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 const cors = require('cors');
@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ Serve static files from React's build folder
-app.use(express.static(path.join(__dirname, '../client/dist'))); // adjust if your frontend build is somewhere else
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
@@ -32,6 +32,7 @@ async function run() {
     await client.connect();
     const bookCollection = client.db("kitabganj").collection("kitab");
 
+    // ✅ API Routes
     app.post("/upload-book", async (req, res) => {
       const data = req.body;
       const result = await bookCollection.insertOne(data);
@@ -90,20 +91,21 @@ async function run() {
       res.send(result);
     });
 
+    // ✅ Wildcard route must be placed AFTER all API routes
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    });
+
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged MongoDB!");
-  } finally {
-    // await client.close();
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
   }
 }
+
 run().catch(console.dir);
 
-// ✅ Wildcard route to serve index.html for React Router
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-});
-
-console.log('ENV PORT:', process.env.PORT);
+// ✅ Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
