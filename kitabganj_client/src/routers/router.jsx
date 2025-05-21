@@ -12,7 +12,7 @@ import DashboardLayout from "../dashboard/DashboardLayout";
 import Dashboard from "../dashboard/Dashboard";
 import { BsUpc } from "react-icons/bs";
 import UploadBook from "../dashboard/UploadBook";
-import MangeBooks from "../dashboard/ManageBooks";
+import ManageBooks from "../dashboard/ManageBooks";
 import EditBooks from "../dashboard/EditBooks";
 import Signup from "../components/Signup";
 import Login from "../components/Login";
@@ -68,7 +68,7 @@ import Logout from "../components/Logout";
          },
          {
           path: "/admin/dashboard/manage",
-          element: <PrivateRoute><MangeBooks/></PrivateRoute>
+          element: <PrivateRoute><ManageBooks/></PrivateRoute>
          },
          {
           path: "/admin/dashboard/edit-books/:id",
