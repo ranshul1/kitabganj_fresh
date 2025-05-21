@@ -43,7 +43,7 @@ const Navbar = () => {
                 <div className='flex flex-col items-start'>
                     {/* logo */}
                     <Link to="/" className='text-2xl font-bold text-blue-700 flex items-center gap-2'>
-                    <img src='/src/assets/logo.jpg' alt="किताबगंज" className="h-12" />किताबगंज
+                    <div className="h-18" />किताबगंज
                     </Link>
 
                     {/* menu btn for the mobile devices */}

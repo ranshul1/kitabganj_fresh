@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contects/AuthProvider'; // Corrected path
-import googlelogo from "../assets/google-logo.svg";
+import googlelogo from '../assets/logo.jpg'
 
 const Login = () => {
     const { loginUser, loginwithGoogle } = useContext(AuthContext);
