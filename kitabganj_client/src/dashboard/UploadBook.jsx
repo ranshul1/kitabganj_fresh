@@ -42,7 +42,7 @@ const UploadBook = () => {
       uploadedBy: user.uid // Use the user's uid
     }
 
-    fetch(`${baseURL}/upload-book`, {
+    fetch(`https://kitabganj-fresh-1.onrender.com/upload-book`, {
       method:"POST",
       headers: {
         "Content-Type": "application/json",

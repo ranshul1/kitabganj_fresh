@@ -9,7 +9,7 @@ const ManageBooks = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`${baseURL}/all-books?uploadedBy=${user.uid}`)
+      fetch(`https://kitabganj-fresh-1.onrender.com/all-books?uploadedBy=${user.uid}`)
         .then(res => res.json())
         .then(data => setAllBooks(data));
     }
@@ -17,7 +17,7 @@ const ManageBooks = () => {
 
   //delete a book
   const handleDelete = (id) =>{
-    fetch(`${baseURL}/book/${id}`, {
+    fetch(`https://kitabganj-fresh-1.onrender.com/book/${id}`, {
       method: "DELETE",
     }).then(res => res.json()).then(data => {
       alert("Book is deleted successfully.");
