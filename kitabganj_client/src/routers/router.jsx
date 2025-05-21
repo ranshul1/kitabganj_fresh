@@ -1,24 +1,26 @@
 import {
   createBrowserRouter,
-  //RouterProvider,
 } from "react-router-dom";
+
 import App from "../App";
 import Home from "../home/Home";
 import Shop from "../shop/Shop";
 import About from "../components/About";
 import Blog from "../components/Blog";
 import SingleBook from "../components/SingleBook";
+
 import DashboardLayout from "../dashboard/DashboardLayout";
 import Dashboard from "../dashboard/Dashboard";
 import UploadBook from "../dashboard/UploadBook";
-import ManageBooks from "../dashboard/ManageBooks";
+import ManageBooks from "../dashboard/ManageBooks";  // spelling fix here
 import EditBooks from "../dashboard/EditBooks";
+
 import Signup from "../components/Signup";
 import Login from "../components/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Logout from "../components/Logout";
 
-const BASE_URL = "https://kitabganj-fresh-1.onrender.com";
+const backendBaseURL = "https://kitabganj-fresh-1.onrender.com";
 
 const router = createBrowserRouter([
   {
@@ -44,12 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/book/:id",
         element: <SingleBook />,
-        loader: ({ params }) => fetch(`${BASE_URL}/book/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`${backendBaseURL}/book/${params.id}`),
       },
       {
-        path: "book/:name",
+        path: "/book/:name",
         element: <SingleBook />,
-        loader: ({ params }) => fetch(`${BASE_URL}/book/${params.name}`),
+        loader: ({ params }) =>
+          fetch(`${backendBaseURL}/book/${params.name}`),
       },
     ],
   },
@@ -84,7 +88,8 @@ const router = createBrowserRouter([
       {
         path: "/admin/dashboard/edit-books/:id",
         element: <EditBooks />,
-        loader: ({ params }) => fetch(`${BASE_URL}/book/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`${backendBaseURL}/book/${params.id}`),
       },
     ],
   },
