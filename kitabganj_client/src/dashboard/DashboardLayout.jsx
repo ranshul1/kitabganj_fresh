@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Sb from './Sb'
+import Sb from '../dashboard/Sb'
 
 const DashboardLayout = () => {
   return (
