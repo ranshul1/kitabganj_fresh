@@ -8,4 +8,7 @@ export default defineConfig({
       'react-router-dom': 'react-router-dom',
     },
   },
+  build: {
+    sourcemap: false,
+  },
 });

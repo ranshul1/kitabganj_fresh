@@ -16,7 +16,7 @@ import { useContext } from "react";
 import { AuthContext } from "../contects/AuthProvider";
 import defaultUserImg from "../assets/profile.jpg"; // Default user image
 
-const SideBar = () => {
+const Sb = () => {
   const { user } = useContext(AuthContext);
 
   return (
@@ -63,4 +63,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Sb;
