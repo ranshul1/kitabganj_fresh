@@ -1,0 +1,36 @@
+.mySwipe {
+  width: 100%;
+  height: 100%;
+}
+
+.mySwipe .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none
+}
+
+.mySwipe .book-container {
+  width: 240px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.mySwipe .book-title h1, h3 {
+  font-size: 13px; /* Adjust this size as needed */
+  text-align: center;
+  margin: 0;
+}
+
+.mySwipe .book-image {
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
+  margin-bottom: 10px;
+}

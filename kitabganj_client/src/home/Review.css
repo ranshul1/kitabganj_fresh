@@ -1,0 +1,54 @@
+.mySwip {
+    width: 100%;
+  }
+  
+  .mySwip .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+  }
+  
+  .mySwip .book-container {
+    width: 450px; /* Adjust width of the card */
+    height: auto; /* Let the height adjust based on content */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    justify-content: center;
+    background: #fff;
+    padding: 20px; /* Adjust padding as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .mySwip .text-amber-500 {
+    color: #f59e0b;
+  }
+  
+  .mySwip .text-black {
+    color: #000;
+  }
+  
+  .mySwip .avatar-container {
+    display: flex;
+    justify-content: flex-start; /* Align avatar to the left */
+    margin-bottom: 1px; /* Adjust spacing between avatar and text */
+  }
+  
+  .mySwip .avatar-container img {
+    width: 30px; /* Adjust width of the profile picture */
+    height: auto; /* Adjust height of the profile picture */
+    border-radius: 50%; /* Make the profile picture round */
+    margin-right: 10px; /* Add margin to separate avatar from text */
+  }
+  
+  .mySwip .text-lg {
+    font-size: 1.2rem; 
+    /* Adjust font size for name */
+  }
+  
+  .mySwip .text-base {
+    font-size: 0.8rem; /* Adjust font size for CEO */
+  }
+  
