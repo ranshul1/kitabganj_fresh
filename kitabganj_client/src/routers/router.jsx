@@ -12,7 +12,7 @@ import DashboardLayout from "../dashboard/DashboardLayout";
 import Dashboard from "../dashboard/Dashboard";
 import { BsUpc } from "react-icons/bs";
 import UploadBook from "../dashboard/UploadBook";
-import MangeBooks from "../dashboard/MangeBooks";
+import MangeBooks from "../dashboard/ManageBooks";
 import EditBooks from "../dashboard/EditBooks";
 import Signup from "../components/Signup";
 import Login from "../components/Login";
